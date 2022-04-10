@@ -4,6 +4,7 @@
   "description": "product api",
   "main": "source/server.ts",
   "scripts": {
+    "start": "node ./bin/www",
     "dev": "nodemon source/server.ts",
     "build": "rm -rf build/ && prettier --write source/ && tsc"
   },
@@ -23,6 +24,7 @@
     "mssql": "^4.1.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
   }
