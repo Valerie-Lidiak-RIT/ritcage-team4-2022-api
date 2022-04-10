@@ -2,10 +2,10 @@ import mysql = require("mysql");
 //creates a class that can be called
 export default class MySQL {
   private static _instance: MySQL;
-//specifies the connection type to connect to the server
+  //specifies the connection type to connect to the server
   connection: mysql.Connection;
   connected: boolean = false;
-//specifies where to connect to go to the server, then connects to it
+  //specifies where to connect to go to the server, then connects to it
   constructor() {
     this.connection = mysql.createConnection({
       host: "192.168.204.218",
@@ -20,7 +20,7 @@ export default class MySQL {
   public static get instance() {
     return this._instance || (this._instance = new this());
   }
-//specifies a function that allows you to pass custom queries onto the database
+  //specifies a function that allows you to pass custom queries onto the database
   public static query(query: string, callback: Function) {
     this.instance.connection.query(
       query,
@@ -39,7 +39,7 @@ export default class MySQL {
   public static escape(id: any) {
     return this.instance.connection.escape(id);
   }
-//this does the connection to the database. It also handles errors
+  //this does the connection to the database. It also handles errors
   private connect() {
     this.connection.connect((err: mysql.MysqlError) => {
       if (err) {
