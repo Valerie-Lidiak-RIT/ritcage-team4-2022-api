@@ -1,8 +1,10 @@
 import { Express } from "express";
 import mysql from "../database/mysql";
 
+// this is the class that handles the routes for Borrower_contents
 export class BorrowerContentsRoutes {
   static async register(app: Express) {
+    //these are all the routes
     app.get(
       "/borrower_contents/reservation/checkin/:reservationID",
       async (req, res) => {
